@@ -32,6 +32,7 @@ function insertPasswordIntoDOM(pwdText)
 {
     const passwordBox = document.createElement('span')
     passwordBox.classList.add('password-box')
+    passwordBox.classList.add(pwdText)
     passwordBox.textContent = pwdText
     
     passwordBox.onmouseover = () => {
