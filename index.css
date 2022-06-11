@@ -97,6 +97,7 @@ main{
 
 .inputs-wrapper input:focus{
     outline: none;
+    border-bottom: 2px solid #10B981;
 }
 
 input{
@@ -105,6 +106,8 @@ input{
 
 .inputs-wrapper input[type='number']{
     width: 13rem;
+    border: none;
+    border-bottom: 2px solid gray;
 }
 
 .checkbox-wrapper{
