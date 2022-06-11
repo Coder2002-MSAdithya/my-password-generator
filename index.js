@@ -32,12 +32,24 @@ function insertPasswordIntoDOM(pwdText)
 {
     const passwordBox = document.createElement('span')
     passwordBox.classList.add('password-box')
-    passwordBox.classList.add(pwdText)
     passwordBox.textContent = pwdText
+    
+    passwordBox.onmouseover = () => {
+        passwordBox.style.color = "white"
+        passwordBox.textContent = "Click to copy!"
+    }
+    
+    passwordBox.onmouseout = () => {
+        if(passwordBox.textContent !== "Copied!")
+        {
+            passwordBox.style.color = "#5DEF92"
+            passwordBox.textContent = pwdText
+        }
+    }
     
     passwordBox.onclick = (evt) => {
             evt.stopPropagation()
-            navigator.clipboard.writeText(passwordBox.textContent).then(() => {
+            navigator.clipboard.writeText(pwdText).then(() => {
             passwordBox.textContent = "Copied!"
             passwordBox.style.color = "white"
         })
